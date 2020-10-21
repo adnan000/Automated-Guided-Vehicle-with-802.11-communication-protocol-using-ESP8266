@@ -59,11 +59,13 @@ echo "Connected Successfully";
           }else{ // jika terdapat entri maka tampilkan datanya
             $no = 1; // mewakili data dari nomor 1
             while($row = mysqli_fetch_assoc($sql)){ // fetch query yang sesuai ke dalam array
+			$x = $conn->query("SELECT ST_X(SELECT Location from item_stocks WHERE Location=(.$row[Location].))");
+			echo $x;
               echo '
               <tr>
                 <td>'.$no.'</td>
                 <td>'.$row['Item'].'</td>
-                <td>'.$row['Location'].'</td>
+                <td>'.$x.'</td>
                 <td>'.$row['Status'].'</td>
               </tr>
               ';
