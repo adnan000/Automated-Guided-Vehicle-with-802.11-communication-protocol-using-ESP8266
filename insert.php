@@ -12,6 +12,7 @@ if ($conn->query($sql) === TRUE) {
   echo "Error updating record: " . $conn->error;
 }
 }
-#insert($conn, "item_stocks (Item, Location, Status)", "('Vitacov', 'Point(1 1)', '1')"); contoh pemanggilan
+#insert($conn, "item_stocks (Item, Status)", "('A', '12')");
+#$sql=$conn->query("DELETE FROM item_stocks WHERE Item='' ");
 ?>
 
